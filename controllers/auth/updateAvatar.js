@@ -1,11 +1,11 @@
 const { User } = require("../../models/user");
 const { RequestError } = require("../../utils");
 const fs = require("fs/promises");
-const getAvatarImageFileName = require("../../utils/getAvatarImageFileName");
-const getTempPath = require("../../utils/getTempPath");
-const getAvatarsPath = require("../../utils/getAvatarsPath");
+const { getAvatarImageFileName } = require("../../utils");
+const { getTempPath } = require("../../utils");
+const { getAvatarsPath } = require("../../utils");
 const path = require("path");
-const resizeByJimp = require("../../utils/resizeByJimp");
+const { resizeByJimp } = require("../../utils");
 
 const updateAvatar = async (req, res, next) => {
 	try {

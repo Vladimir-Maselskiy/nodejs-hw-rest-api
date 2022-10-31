@@ -6,9 +6,7 @@ const logout = async (req, res, next) => {
 		const user = await User.findOne({ _id: req.userId });
 		if (!user) throw RequestError(401);
 		await User.findByIdAndUpdate(user._id, { token: null });
-		console.log("afterFindById");
 		res.status(204).json();
-		next();
 	} catch (error) {
 		next(error);
 	}
